@@ -1,0 +1,26 @@
+consul:
+  image: gliderlabs/consul-agent
+  net: "host"
+  environment:
+    SERVICE_IGNORE: "true"
+  entrypoint:
+    - /run.sh
+  volumes:
+    - "./docker/consul/config:/config"
+    - "./docker/consul/run.sh:/run.sh"
+
+git2consul:
+  image: cimpress/git2consul
+  net: "host"
+  environment:
+    CONSUL_ENDPOINT: 127.0.0.1
+    CONSUL_PORT: 10004
+
+config:
+  image: appropriate/curl
+  net: "host"
+  volumes:
+    - "./docker/config/config.sh:/config.sh"
+    - "./git2consul:/git2consul"
+  entrypoint:
+    - "/config.sh"
