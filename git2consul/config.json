@@ -8,7 +8,28 @@
         "master"
       ],
       "include_branch_name": false,
-      "source_root": "config",
+      "ignore_repo_name": true,
+      "mountpoint": "config",
+      "source_root": "config/raw",
+      "hooks": [
+        {
+          "type": "polling",
+          "interval": "1"
+        }
+      ]
+    },
+    {
+      "name": "sample_expanded_configuration",
+      "url": "https://github.com/konrad-czajka/g2c_test.git",
+      "branches": [
+        "master"
+      ],
+      "include_branch_name": false,
+      "ignore_repo_name": true,
+      "ignore_file_extension" : true,
+      "source_root": "config/expanded/multiple.yml",
+      "mountpoint": "config",
+      "expand_keys": true,
       "hooks": [
         {
           "type": "polling",
