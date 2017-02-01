@@ -1,0 +1,20 @@
+{
+  "node_name": "test_consul",
+  "client_addr": "0.0.0.0",
+  "advertise_addr": "127.0.0.1",
+  "leave_on_terminate": true,
+  "dns_config": {
+    "allow_stale": true,
+    "max_stale": "1s"
+  },
+  "server": true,
+  "ui": true,
+  "ports": {
+    "server": 10000,
+    "serf_lan": 10001,
+    "serf_wan": 10002,
+    "dns": 10005,
+    "http": 10004,
+    "rpc": 10003
+  }
+}
