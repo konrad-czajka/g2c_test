@@ -1,12 +1,20 @@
 {
   "version": "1.0",
-  "repos" : [{
-    "name" : "sample_configuration",
-    "url" : "https://github.com/ryanbreen/git2consul_data.git",
-    "branches" : ["dev"],
-    "hooks": [{
-      "type" : "polling",
-      "interval" : "1"
-    }]
-  }]
+  "repos": [
+    {
+      "name": "sample_raw_configuration",
+      "url": "https://github.com/konrad-czajka/g2c_test.git",
+      "branches": [
+        "master"
+      ],
+      "include_branch_name": false,
+      "source_root": "config",
+      "hooks": [
+        {
+          "type": "polling",
+          "interval": "1"
+        }
+      ]
+    }
+  ]
 }
